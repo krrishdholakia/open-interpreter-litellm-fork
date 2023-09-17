@@ -190,7 +190,6 @@ class Interpreter:
     self.messages = messages
 
   def chat(self, message=None, return_messages=False):
-
     # Connect to an LLM (an large language model)
     if not self.local:
       # gpt-4
@@ -510,8 +509,6 @@ class Interpreter:
                   temperature=self.temperature,
                 )
               else:
-                def logger_fn(output):
-                  print(output)
                 if "litellm_proxy" in self.model: 
                   litellm.api_base = "https://proxy.litellm.ai"
                   # litellm.api_base = "http://0.0.0.0:8080"
@@ -522,7 +519,6 @@ class Interpreter:
                   functions=[function_schema],
                   stream=True,
                   temperature=self.temperature,
-                  logger_fn=logger_fn
                 )
             break
         except:
