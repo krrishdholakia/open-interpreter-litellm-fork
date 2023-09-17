@@ -174,7 +174,7 @@ def cli(interpreter):
     if "/" in interpreter.model:
       interpreter.local = True
 
-    if "togethercomputer/" in interpreter.model:
+    if "togethercomputer/" in interpreter.model or "litellm_proxy/" in interpreter.model:
       interpreter.local = False
 
   if args.api_base:

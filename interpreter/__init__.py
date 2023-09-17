@@ -1,6 +1,12 @@
-from .interpreter import Interpreter
 import sys
+# sys.path.insert(0, '/Users/krrishdholakia/Documents/litellm')
+# import litellm
 
+# print(litellm.__path__)
+
+from .interpreter import Interpreter
+# import litellm
+# print(litellm.__path__)
 # This is done so when users `import interpreter`,
 # they get an instance of interpreter:
 
